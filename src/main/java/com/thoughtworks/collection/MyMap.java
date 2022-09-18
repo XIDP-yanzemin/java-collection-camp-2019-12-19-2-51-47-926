@@ -1,7 +1,5 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,22 +15,22 @@ public class MyMap {
     }
 
     public List<Integer> getTriple() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,9 +1,6 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.List;
-import java.util.Map;
 
 public class Filter {
 
@@ -14,18 +11,18 @@ public class Filter {
     }
 
     public List<Integer> filterEven() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<Integer> filterMultipleOfThree() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 
     public List<Integer> getDifferentElements() {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }
