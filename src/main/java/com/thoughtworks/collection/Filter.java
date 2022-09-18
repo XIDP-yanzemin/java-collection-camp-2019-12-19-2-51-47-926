@@ -8,11 +8,11 @@ public class Filter {
     List<Integer> array;
 
     public Filter(List<Integer> array) {
-     this.array = array;
+        this.array = array;
     }
 
     public List<Integer> filterEven() {
-       return array.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
+        return array.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
     }
 
     public List<Integer> filterMultipleOfThree() {

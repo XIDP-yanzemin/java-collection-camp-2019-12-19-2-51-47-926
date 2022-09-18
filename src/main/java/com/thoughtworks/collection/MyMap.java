@@ -26,7 +26,19 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new UnsupportedOperationException();
+        List<String> resultList = new ArrayList<>();
+        for (Integer integer : array) {
+            if (integer <= 26) {
+                resultList.add(letters[integer - 1]);
+            } else {
+                if (integer % 26 == 0) {
+                    resultList.add(letters[integer / 26 - 2] + "z");
+                } else {
+                    resultList.add(letters[(integer / 26) - 1] + letters[integer % 26 - 1]);
+                }
+            }
+        }
+        return resultList;
     }
 
     public List<Integer> sortFromBig() {

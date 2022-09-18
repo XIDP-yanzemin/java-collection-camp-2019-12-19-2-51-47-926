@@ -21,8 +21,5 @@ public class InverseReduce {
 
         }
         return integers;
-//
-//        List<Integer> resultList = new ArrayList<>();
-//        resultList.stream().takeWhile()
     }
 }

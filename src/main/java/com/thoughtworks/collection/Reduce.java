@@ -28,10 +28,10 @@ public class Reduce {
     }
 
     public double getMedian() {
-        if(arrayList.size() % 2 != 0){
+        if (arrayList.size() % 2 != 0) {
             return arrayList.get(arrayList.size() >> 1);
         }
-        return (double) (arrayList.get((arrayList.size() / 2))+arrayList.get(arrayList.size() / 2 - 1))/2;
+        return (double) (arrayList.get((arrayList.size() / 2)) + arrayList.get(arrayList.size() / 2 - 1)) / 2;
     }
 
     public double getOrderedMedian() {
@@ -50,7 +50,6 @@ public class Reduce {
     public boolean isEqual(List<Integer> arrayList) {
         return this.arrayList.equals(arrayList);
     }
-
 
 
     public int getLastOdd() {

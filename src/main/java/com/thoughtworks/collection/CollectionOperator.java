@@ -1,12 +1,14 @@
 package com.thoughtworks.collection;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
-        if(left < right){
+        if (left < right) {
             return IntStream.rangeClosed(left, right).boxed().collect(Collectors.toList());
         }
         return IntStream.rangeClosed(right, left).boxed().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
