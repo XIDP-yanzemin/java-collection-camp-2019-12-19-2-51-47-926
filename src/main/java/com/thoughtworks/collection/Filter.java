@@ -1,28 +1,29 @@
 package com.thoughtworks.collection;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Filter {
 
-    List<Integer>  array;
+    List<Integer> array;
 
     public Filter(List<Integer> array) {
      this.array = array;
     }
 
     public List<Integer> filterEven() {
-        throw new UnsupportedOperationException();
+       return array.stream().filter(i -> i % 2 == 0).collect(Collectors.toList());
     }
 
     public List<Integer> filterMultipleOfThree() {
-        throw new UnsupportedOperationException();
+        return array.stream().filter(i -> i % 3 == 0).collect(Collectors.toList());
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new UnsupportedOperationException();
+        return firstList.stream().filter(secondList::contains).collect(Collectors.toList());
     }
 
     public List<Integer> getDifferentElements() {
-        throw new UnsupportedOperationException();
+        return array.stream().distinct().collect(Collectors.toList());
     }
 }
