@@ -1,6 +1,8 @@
 package com.thoughtworks.collection;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Reduce {
 
@@ -11,42 +13,53 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new UnsupportedOperationException();
+
+        Optional<Integer> max = arrayList.stream().max(Integer::compare);
+        return max.orElse(Integer.MAX_VALUE);
     }
 
     public double getMinimum() {
-        throw new UnsupportedOperationException();
+        Optional<Integer> min = arrayList.stream().min(Integer::compare);
+        return min.orElse(Integer.MIN_VALUE);
     }
 
     public double getAverage() {
-        throw new UnsupportedOperationException();
+        return arrayList.stream().mapToInt(i -> i).average().orElse(0);
     }
 
-    public double getMedian() { throw new UnsupportedOperationException(); }
+    public double getMedian() {
+        if(arrayList.size() % 2 != 0){
+            return arrayList.get(arrayList.size() >> 1);
+        }
+        return (double) (arrayList.get((arrayList.size() / 2))+arrayList.get(arrayList.size() / 2 - 1))/2;
+    }
 
     public double getOrderedMedian() {
-        throw new UnsupportedOperationException();
+        return getMedian();
     }
 
     public int getFirstEven() {
-        throw new UnsupportedOperationException();
+        return arrayList.stream().filter(i -> i % 2 == 0).findFirst().orElse(0);
     }
 
     public int getIndexOfFirstEven() {
-        throw new UnsupportedOperationException();
+        int firstEven = getFirstEven();
+        return arrayList.indexOf(firstEven);
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new UnsupportedOperationException();
+        return this.arrayList.equals(arrayList);
     }
 
 
 
     public int getLastOdd() {
-        throw new UnsupportedOperationException();
+        List<Integer> evenList = arrayList.stream().filter(i -> i % 2 != 0).collect(Collectors.toList());
+        return evenList.get(evenList.size() - 1);
     }
 
     public int getIndexOfLastOdd() {
-        throw new UnsupportedOperationException();
+        int lastOdd = getLastOdd();
+        return arrayList.indexOf(lastOdd);
     }
 }
